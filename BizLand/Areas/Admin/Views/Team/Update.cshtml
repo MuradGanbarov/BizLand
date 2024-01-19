@@ -1,0 +1,52 @@
+﻿@using BizLand.Areas.Admin.ViewModels.Team;
+@using BizLand.Models;
+@model TeamUpdateVM
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update Team</h4>
+            <img src="~/assets/img/team/@Model.ImageURL">
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <label asp-for="FullName">Fullname</label>
+                    <input asp-for="FullName" class="form-control" placeholder="FullName">
+                    <span class="text-danger" asp-validation-for="FullName"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Photo">Photo</label>
+                    <input asp-for="Photo" class="form-control" placeholder="Photo" accept="image/*">
+                    <span class="text-danger" asp-validation-for="Photo"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TwitLink">Twitter</label>
+                    <input asp-for="TwitLink" class="form-control" placeholder="Twitter">
+                    <span class="text-danger" asp-validation-for="TwitLink"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="InstaLink">Instagram</label>
+                    <input asp-for="InstaLink" class="form-control" placeholder="Instagram">
+                    <span class="text-danger" asp-validation-for="InstaLink"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LinkedInLink">LinkedIn</label>
+                    <input asp-for="LinkedInLink" class="form-control" placeholder="LinkedIn">
+                    <span class="text-danger" asp-validation-for="LinkedInLink"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FaceLink">Facebook</label>
+                    <input asp-for="FaceLink" class="form-control" placeholder="Facebook">
+                    <span class="text-danger" asp-validation-for="FaceLink"></span>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" asp-items="new SelectList(Model.Positions,nameof(Position.Id),nameof(Position.Name))"></select>
+                    <option disabled selected value="PositionId">Choose Position</option>
+                    <span class="text-danger" asp-validation-for="PositionId"></span>
+                </div>
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <a asp-action="Index" asp-controller="Service" class="btn btn-light">Cancel</a>
+            </form>
+        </img>
+    </div>
+</div>

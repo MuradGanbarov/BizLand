@@ -1,0 +1,20 @@
+﻿
+@using BizLand.Areas.Admin.ViewModels.Setting;
+@model SettingUpdateVM
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update Setting</h4>
+            <form class="forms-sample" method="post">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <label asp-for="Key">Key</label>
+                    <input asp-for="Key" class="form-control" placeholder="Key">
+                    <span asp-validation-for="Key"></span>
+                </div>
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <a asp-action="Index" asp-controller="setting" class="btn btn-light">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
